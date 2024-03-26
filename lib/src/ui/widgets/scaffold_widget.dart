@@ -6,7 +6,8 @@ import 'package:location/src/ui/widgets/alert_widget.dart';
 import 'package:location/src/ui/widgets/loading_widget.dart';
 import 'package:oktoast/oktoast.dart';
 
-class ScaffoldWidget<TStore extends BaseStore<TState>, TError extends Object, TState extends Object> extends StatelessWidget {
+class ScaffoldWidget<TStore extends BaseStore<TState>, TError extends Object, TState extends Object>
+    extends StatelessWidget {
   final TStore store;
   final PreferredSizeWidget? appBar;
   final Widget body;
