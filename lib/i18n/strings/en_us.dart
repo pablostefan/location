@@ -12,4 +12,13 @@ class EnUs implements Strings {
 
   @override
   String get authError => "Session expired. Log in to continue.";
+
+  @override
+  String get permissionError => "You do not have permission to access this resource.";
+
+  @override
+  String get locationEnabledError => "Error checking location.";
+
+  @override
+  String get openLocationSettingsError => "Error opening location settings.";
 }

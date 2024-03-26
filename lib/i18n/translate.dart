@@ -11,7 +11,13 @@ abstract class Strings {
 
   String get genericErrorClient;
 
+  String get genericErrorServer;
+
   String get authError;
 
-  String get genericErrorServer;
+  String get permissionError;
+
+  String get locationEnabledError;
+
+  String get openLocationSettingsError;
 }

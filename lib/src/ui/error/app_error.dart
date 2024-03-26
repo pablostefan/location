@@ -6,11 +6,23 @@ class AppError {
   final String message;
   final AlertType type;
 
-  AppError({required this.message, this.type = AlertType.error});
+  const AppError({required this.message, this.type = AlertType.error});
 
   AppError.fromDioException(DioException error)
       : type = AlertType.error,
         message = _message(error.response?.statusCode ?? 0);
+
+  AppError.permissionError()
+      : type = AlertType.error,
+        message = Translate.strings.permissionError;
+
+  AppError.locationEnabledError()
+      : type = AlertType.error,
+        message = Translate.strings.locationEnabledError;
+
+  AppError.openLocationSettingsError()
+      : type = AlertType.error,
+        message = Translate.strings.locationEnabledError;
 
   static String _message(int code) {
     if (code == 401) return Translate.strings.authError;

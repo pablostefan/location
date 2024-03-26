@@ -12,4 +12,13 @@ class PtBR implements Strings {
 
   @override
   String get authError => "Sessão expirada. Faça login para continuar.";
+
+  @override
+  String get permissionError => "Você não tem permissão para acessar este recurso.";
+
+  @override
+  String get locationEnabledError => "Error ao verificar a localização.";
+
+  @override
+  String get openLocationSettingsError => "Error ao abrir as configurações de localização.";
 }

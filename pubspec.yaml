@@ -22,6 +22,7 @@ dependencies:
   either_dart: ^1.0.0
   flutter_triple: ^3.0.0
   oktoast: ^3.4.0
+  geolocator: ^11.0.0
 
 dev_dependencies:
   flutter_test:
