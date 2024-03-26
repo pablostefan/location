@@ -1,8 +1,10 @@
 import 'package:get_it/get_it.dart';
 import 'package:location/src/data/services/http/http_service.dart';
 import 'package:location/src/data/services/http/interface/http_interface.dart';
+import 'package:location/src/ui/stores/home/home_store.dart';
+import 'package:location/src/ui/stores/init/init_store.dart';
 
-class AppDependencies {
+sealed class AppDependencies {
   static final GetIt getIt = GetIt.instance;
 
   static void configure() {
@@ -16,6 +18,6 @@ class AppDependencies {
 
   static void _configureStores() {
     getIt.registerSingleton<HomeStore>(HomeStore());
-    getIt.registerSingleton<ContactStore>(ContactStore());
+    getIt.registerSingleton<InitStore>(InitStore());
   }
 }
