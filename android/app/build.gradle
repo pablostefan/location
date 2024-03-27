@@ -21,12 +21,13 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
+apply from: project(':flutter_config').projectDir.getPath() + "/dotenv.gradle"
 
 android {
     namespace "com.example.location"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
