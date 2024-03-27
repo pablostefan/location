@@ -50,7 +50,3 @@ The app is structured around the following core components:
 [geolocator](https://pub.dev/packages/geolocator) - Package for accessing the device's geolocation capabilities in Flutter.
 
 [flutter_svg](https://pub.dev/packages/flutter_svg) - Package for rendering SVG images in Flutter apps.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
