@@ -3,17 +3,28 @@ import 'package:geolocator/geolocator.dart';
 import 'package:location/src/data/services/location/interface/location_service_interface.dart';
 import 'package:location/src/ui/error/app_error.dart';
 
-class LocationService extends ILocationService {
+class LocationService implements ILocationService {
   @override
-  Future<Either<AppError, bool>> requestPermission() async {
+  Future<Either<AppError, bool>> checkLocationPermissionAndService() async {
     try {
+      // Request location permission from the user
       await Geolocator.requestPermission();
-      return Right(_checkPermission(await Geolocator.checkPermission()));
+
+      // Check if location permission is granted
+      bool locationPermission = _checkPermission(await Geolocator.checkPermission());
+
+      // Check if location services are enabled on the device
+      bool locationEnabled = await Geolocator.isLocationServiceEnabled();
+
+      // Return whether location services are enabled and permission is granted
+      return Right(locationPermission && locationEnabled);
     } catch (error) {
-      return Left(AppError.permissionError());
+      // In case of error, return an AppError object
+      return Left(AppError.checkLocationError());
     }
   }
 
+  // Private method to check if location permission is granted
   bool _checkPermission(LocationPermission permission) {
     switch (permission) {
       case LocationPermission.always:
@@ -28,29 +39,16 @@ class LocationService extends ILocationService {
   }
 
   @override
-  Future<Either<AppError, bool>> locationEnabled() async {
+  Future<Either<AppError, Position>> getCurrentPosition() async {
     try {
-      return Right(await Geolocator.isLocationServiceEnabled());
-    } catch (error) {
-      return Left(AppError.locationEnabledError());
-    }
-  }
+      // Get the current position of the device
+      Position position = await Geolocator.getCurrentPosition();
 
-  @override
-  Future<Either<AppError, bool>> openLocationSettings() async {
-    try {
-      return Right(await Geolocator.openLocationSettings());
+      // Return the position
+      return Right(position);
     } catch (error) {
-      return Left(AppError.openLocationSettingsError());
-    }
-  }
-
-  @override
-  Future<Either<AppError, Stream<Position>>> getLocation() async {
-    try {
-      return Right(Geolocator.getPositionStream());
-    } catch (error) {
-      return Left(AppError.openLocationSettingsError());
+      // In case of error, return an AppError object
+      return Left(AppError.getPositionError());
     }
   }
 }

@@ -14,11 +14,11 @@ class EnUs implements Strings {
   String get authError => "Session expired. Log in to continue.";
 
   @override
-  String get permissionError => "You do not have permission to access this resource.";
+  String get locationError => "Error getting location.";
 
   @override
-  String get locationEnabledError => "Error checking location.";
+  String get checkLocationError => "Error checking location.";
 
   @override
-  String get openLocationSettingsError => "Error opening location settings.";
+  String get gpsMap => "GPS Map";
 }

@@ -12,17 +12,17 @@ class AppError {
       : type = AlertType.error,
         message = _message(error.response?.statusCode ?? 0);
 
-  AppError.permissionError()
+  AppError.locationError()
       : type = AlertType.error,
-        message = Translate.strings.permissionError;
+        message = Translate.strings.locationError;
 
-  AppError.locationEnabledError()
+  AppError.checkLocationError()
       : type = AlertType.error,
-        message = Translate.strings.locationEnabledError;
+        message = Translate.strings.checkLocationError;
 
-  AppError.openLocationSettingsError()
+  AppError.getPositionError()
       : type = AlertType.error,
-        message = Translate.strings.locationEnabledError;
+        message = Translate.strings.locationError;
 
   static String _message(int code) {
     if (code == 401) return Translate.strings.authError;

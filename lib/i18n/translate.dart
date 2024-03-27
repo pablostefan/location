@@ -15,9 +15,9 @@ abstract class Strings {
 
   String get authError;
 
-  String get permissionError;
+  String get locationError;
 
-  String get locationEnabledError;
+  String get checkLocationError;
 
-  String get openLocationSettingsError;
+  String get gpsMap;
 }

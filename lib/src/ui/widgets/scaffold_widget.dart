@@ -6,8 +6,7 @@ import 'package:location/src/ui/widgets/alert_widget.dart';
 import 'package:location/src/ui/widgets/loading_widget.dart';
 import 'package:oktoast/oktoast.dart';
 
-class ScaffoldWidget<TStore extends BaseStore<TState>, TError extends Object, TState extends Object>
-    extends StatelessWidget {
+class ScaffoldWidget<TStore extends BaseStore<TState>, TState extends Object?> extends StatelessWidget {
   final TStore store;
   final PreferredSizeWidget? appBar;
   final Widget body;
@@ -33,19 +32,17 @@ class ScaffoldWidget<TStore extends BaseStore<TState>, TError extends Object, TS
     this.floatingActionButton,
   });
 
-  void _onError(BuildContext context, Triple<TState> triple) {
-    if (triple.event == TripleEvent.error && triple.error is AppError) {
-      showToastWidget(dismissOtherToast: true, context: context, AlertWidget(alert: triple.error as AppError));
-    }
+  void _onError(BuildContext context, dynamic error) {
+    if (error is AppError) showToastWidget(dismissOtherToast: true, context: context, AlertWidget(alert: error));
   }
 
   @override
   Widget build(BuildContext context) {
-    return TripleConsumer<TStore, TError, TState>(
-        listener: _onError,
+    return ScopedConsumer<TStore, TState>(
         store: store,
-        builder: (_, triple) => LoadingWidget(
-            isLoading: triple.isLoading,
+        onErrorListener: _onError,
+        onStateBuilder: (_, triple) => LoadingWidget(
+            isLoading: store.isLoading,
             child: Scaffold(
                 floatingActionButton: floatingActionButton,
                 backgroundColor: backgroundColor,
