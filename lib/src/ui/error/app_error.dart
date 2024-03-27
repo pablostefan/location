@@ -24,6 +24,10 @@ class AppError {
       : type = AlertType.error,
         message = Translate.strings.locationError;
 
+  AppError.empty()
+      : type = AlertType.error,
+        message = "";
+
   static String _message(int code) {
     if (code == 401) return Translate.strings.authError;
     if (code >= 400) return Translate.strings.genericErrorClient;

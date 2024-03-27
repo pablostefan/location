@@ -1,4 +1,5 @@
 import 'package:either_dart/either.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:location/src/data/models/position_response_model.dart';
 import 'package:location/src/data/repositories/api_geolocation/interface/api_geolocation_repository_interface.dart';
 import 'package:location/src/data/services/http/interface/http_interface.dart';
@@ -13,7 +14,7 @@ class APIGeolocationRepository extends IAPIGeolocationRepository {
   @override
   Future<Either<AppError, PositionResponseModel>> getCurrentPosition() async {
     return executeWithCatch(() async {
-      var response = await _http.get("http://ip-api.com/json");
+      var response = await _http.get(FlutterConfig.get("API_URL"));
       return PositionResponseModel.fromJson(response.data);
     });
   }

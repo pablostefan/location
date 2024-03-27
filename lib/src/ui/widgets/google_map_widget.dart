@@ -12,6 +12,7 @@ class GoogleMapWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: GoogleMap(
+            key: const ValueKey('google_map'),
             zoomControlsEnabled: true,
             myLocationButtonEnabled: false,
             mapType: MapType.normal,

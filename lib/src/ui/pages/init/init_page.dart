@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
-import 'package:location/src/ui/assets/app_images.dart';
+import 'package:location/src/ui/assets/app_vectors.dart';
 import 'package:location/src/ui/stores/init/init_store.dart';
 import 'package:location/src/ui/ui_helpers/app_colors.dart';
 import 'package:location/src/ui/widgets/scoped_listener_widget.dart';

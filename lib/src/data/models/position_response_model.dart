@@ -48,4 +48,20 @@ class PositionResponseModel {
         org: json['org'],
         as: json['as']);
   }
+
+  PositionResponseModel.empty()
+      : query = '',
+        status = '',
+        country = '',
+        countryCode = '',
+        region = '',
+        regionName = '',
+        city = '',
+        zip = '',
+        latitude = 0.0,
+        longitude = 0.0,
+        timezone = '',
+        isp = '',
+        org = '',
+        as = '';
 }

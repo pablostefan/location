@@ -26,6 +26,8 @@ dependencies:
   flutter_svg: ^2.0.10+1
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   mockito: ^5.4.4
   flutter_test:
     sdk: flutter
