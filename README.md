@@ -2,7 +2,7 @@
 
 The Location App is a mobile application developed to provide functionalities related to obtaining device location information and displaying it on a map.
 
-# Features
+## Features
 
 Real-time Location Retrieval: The app utilizes the device's location service to fetch the user's current location in real-time.
 Map Visualization: Location information is displayed on an interactive map, allowing users to view their current position and explore the surroundings.
@@ -27,26 +27,30 @@ The app is structured around the following core components:
    Integration Test: Integration test to verify if the Google map is correctly displayed after the application is initialized.
    Widget Tests: Widget test to ensure the correct behavior of the ScopedListenerWidget widget regarding the display of error alerts.
 
-# Technologies Used
+## Technologies Used
 
-[Flutter] - Cross-platform app development framework.
+[Flutter](https://flutter.dev) - Cross-platform app development framework.
 
-[google_maps_flutter] - Package for integrating Google Maps into Flutter apps.
+[google_maps_flutter](https://pub.dev/packages/google_maps_flutter) - Package for integrating Google Maps into Flutter apps.
 
-[flutter_config] - Package for loading environment variables from .env files.
+[flutter_config](https://pub.dev/packages/flutter_config) - Package for loading environment variables from .env files.
 
-[go_router] - Package for routing and navigation management in Flutter apps.
+[go_router](https://pub.dev/packages/go_router) - Package for routing and navigation management in Flutter apps.
 
-[get_it] - Package for dependency injection in Flutter apps.
+[get_it](https://pub.dev/packages/get_it) - Package for dependency injection in Flutter apps.
 
-[dio] - Package for making HTTP requests in Dart and Flutter.
+[dio](https://pub.dev/packages/dio) - Package for making HTTP requests in Dart and Flutter.
 
-[either_dart] - Library for modeling success or error values in Dart.
+[either_dart](https://pub.dev/packages/either_dart) - Library for modeling success or error values in Dart.
 
-[flutter_triple] - Library for state management in Flutter using the triple pattern.
+[flutter_triple](https://pub.dev/packages/flutter_triple) - Library for state management in Flutter using the triple pattern.
 
-[oktoast] - Package for showing toast messages in Flutter apps.
+[oktoast](https://pub.dev/packages/oktoast) - Package for showing toast messages in Flutter apps.
 
-[geolocator] - Package for accessing the device's geolocation capabilities in Flutter.
+[geolocator](https://pub.dev/packages/geolocator) - Package for accessing the device's geolocation capabilities in Flutter.
 
-[flutter_svg] - Package for rendering SVG images in Flutter apps.
+[flutter_svg](https://pub.dev/packages/flutter_svg) - Package for rendering SVG images in Flutter apps.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
