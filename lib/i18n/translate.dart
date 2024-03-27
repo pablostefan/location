@@ -20,4 +20,6 @@ abstract class Strings {
   String get checkLocationError;
 
   String get gpsMap;
+
+  String get apiMap;
 }

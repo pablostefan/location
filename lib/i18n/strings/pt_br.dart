@@ -20,5 +20,8 @@ class PtBR implements Strings {
   String get checkLocationError => "Error ao verificar a localização.";
 
   @override
-  String get gpsMap => "GPS Mapa";
+  String get gpsMap => "Mapa GPS";
+
+  @override
+  String get apiMap => "Mapa API";
 }

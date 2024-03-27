@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_triple/flutter_triple.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
+import 'package:location/src/ui/assets/app_images.dart';
 import 'package:location/src/ui/stores/init/init_store.dart';
-import 'package:location/src/ui/widgets/scaffold_widget.dart';
+import 'package:location/src/ui/ui_helpers/app_colors.dart';
+import 'package:location/src/ui/widgets/scoped_listener_widget.dart';
 
 class InitPage extends StatefulWidget {
   const InitPage({super.key});
@@ -15,16 +17,16 @@ class _InitPageState extends State<InitPage> {
   final InitStore _store = GetIt.I.get<InitStore>();
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _store.checkLocation(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ScaffoldWidget<InitStore, bool>(
+    return ScopedListenerWidget(
         store: _store,
-        body: Center(
-            child: TripleBuilder<InitStore, bool>(
-                store: _store,
-                builder: (_, triple) => AnimatedAlign(
-                    onEnd: () => _store.openNextPage(context),
-                    alignment: triple.state ? Alignment.topCenter : Alignment.bottomCenter,
-                    duration: Durations.medium3,
-                    child: const Icon(Icons.gps_not_fixed)))));
+        child: Scaffold(
+            backgroundColor: AppColors.monoWhite, body: Center(child: SvgPicture.asset(Vector.cloudWalk.svg))));
   }
 }

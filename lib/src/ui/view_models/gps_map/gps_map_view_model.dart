@@ -1,9 +1,9 @@
-import 'package:geolocator/geolocator.dart';
+import 'package:location/src/ui/models/position_model.dart';
 
 class GPSMapViewModel {
-  Position? position;
+  PositionModel position = PositionModel.cloudWalk();
 
-  GPSMapViewModel copyWith({Position? position}) {
+  GPSMapViewModel copyWith({PositionModel? position}) {
     return GPSMapViewModel()..position = position ?? this.position;
   }
 }

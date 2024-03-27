@@ -69,7 +69,7 @@ extension TypographyExtension on Text {
             fontStyle: FontStyle.normal,
             fontFamily: FontFamily.inter.name,
             height: height,
-            color: AppColors.monoWhite,
+            color: AppColors.monoBlack,
             letterSpacing: letterSpacing,
             fontWeight: fontWeight)
         .merge(mergeStyle);

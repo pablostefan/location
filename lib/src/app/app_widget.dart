@@ -13,7 +13,7 @@ class AppWidget extends StatelessWidget {
         textPadding: EdgeInsets.zero,
         dismissOtherOnShow: true,
         child: MaterialApp.router(
-            title: 'location',
+            title: 'gps_location',
             locale: const Locale('pt', 'BR'),
             localizationsDelegates: const [
               GlobalCupertinoLocalizations.delegate,
