@@ -30,13 +30,23 @@ The app is structured around the following core components:
 # Technologies Used
 
 [Flutter] - Cross-platform app development framework.
+
 [google_maps_flutter] - Package for integrating Google Maps into Flutter apps.
+
 [flutter_config] - Package for loading environment variables from .env files.
+
 [go_router] - Package for routing and navigation management in Flutter apps.
+
 [get_it] - Package for dependency injection in Flutter apps.
+
 [dio] - Package for making HTTP requests in Dart and Flutter.
+
 [either_dart] - Library for modeling success or error values in Dart.
+
 [flutter_triple] - Library for state management in Flutter using the triple pattern.
+
 [oktoast] - Package for showing toast messages in Flutter apps.
+
 [geolocator] - Package for accessing the device's geolocation capabilities in Flutter.
+
 [flutter_svg] - Package for rendering SVG images in Flutter apps.
