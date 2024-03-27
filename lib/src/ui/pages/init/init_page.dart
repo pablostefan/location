@@ -27,6 +27,7 @@ class _InitPageState extends State<InitPage> {
     return ScopedListenerWidget(
         store: _store,
         child: Scaffold(
-            backgroundColor: AppColors.monoWhite, body: Center(child: SvgPicture.asset(Vector.cloudWalk.svg))));
+            backgroundColor: AppColors.monoWhite,
+            body: Center(child: SvgPicture.asset(key: const Key('cloudWalkSvg'), Vector.cloudWalk.svg))));
   }
 }
